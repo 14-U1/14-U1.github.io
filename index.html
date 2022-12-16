@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8">
   <title>14-U1</title>
@@ -11,6 +12,15 @@
     * {
       line-height: 1.2;
       margin: 0;
+    }
+
+    #confetti-canvas {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     html {
@@ -58,18 +68,35 @@
 
     }
   </style>
+  <script src="confetti.js"></script>
+  <script>
+    var clicks = 0;
+    function clickHandler() {
+      if (clicks < 3) {
+        clicks++;
+      }
+      else {
+        startConfetti();
+      }
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-  <h1><u>Informatik 14-U1</u></h1>
+  <canvas id="confetti-canvas"></canvas>
+  <h1><u id="headline" onclick="clickHandler()">Informatik 14-U1</u></h1>
   <br><br>
   <a href="https://14-u1.github.io/java-tutorial/">Java Tutorial</a>
   <p>↑ Wichtig für die Klausur am 19.12.2022 ↑</p>
   <br><br>
   <h1><u>(Haus-)aufgaben</u></h1>
   <br>
-  <a href="https://github.com/moritzuff/CarRent_GmbH/blob/840d6bd888ba91e727a9477a6ba10d7702bef8b9/src/carrent/CarRent.java">15.12.22 - Tanken</a>
+  <a
+    href="https://github.com/moritzuff/CarRent_GmbH/blob/840d6bd888ba91e727a9477a6ba10d7702bef8b9/src/carrent/CarRent.java">15.12.22
+    - Tanken</a>
   <br><br>
   <footer>Made with ♡ by Felix, Moritz & Florian</footer>
 </body>
+
 </html>
